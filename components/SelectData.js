@@ -24,7 +24,7 @@ const SelectData = () => {
   }, [])
 
   return (
-    <>
+    <div className="mt-2 mb-4">
         {options?
             <Select
                 value={selectedOption}
@@ -34,7 +34,7 @@ const SelectData = () => {
             :
             <h1>Loading ...</h1>
           }
-    </>
+    </div>
   )
 }
 

@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className="text-white font-semibold text-[25px]">You like One there are others similar :) </h1>
           <div className="w-[100%]">
               <div className="m-auto w-[70%] p-[10px]">
-                  <h1 className="text-white font-semibold ">Choose a movie you Love</h1>
+                  <h1 className="text-white font-semibold mt-4">( First select movie then click Recommend Movie Below ) Choose a movie you Love</h1>
                   <SelectData/>
                   <ListOfMovies />
                 </div>
