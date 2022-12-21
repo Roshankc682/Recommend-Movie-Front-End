@@ -4,8 +4,8 @@ import axios from 'axios'
 import { BACK_END_URL ,MOVIES_RANDOM_LIST, MOVIES_LIST } from './urls';
 import ListMoviesData from './ListMoviesData'
 import ShimmerLoading from './ShimmerLoading';
+import Test from './Test';
 
-// https://image.tmdb.org/t/p/original/y8yvIrmoM2PLuJcSto7OmOfsXQj.jpg
 
 const ListOfMovies = () => {
 
@@ -28,6 +28,7 @@ const ListOfMovies = () => {
         }).finally(()=>{
             setLoadingRandom(false)
             setWholeListLoading(false)
+            setcomponentRender("list")
         })
     }
     useEffect(() => {
@@ -52,6 +53,7 @@ const ListOfMovies = () => {
                     onClick={()=>{
                         setLoadingRandom(true)
                         setWholeListLoading(true)
+                        setcomponentRender("list")
                         random_movies()
                     }}
                     className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
@@ -60,6 +62,11 @@ const ListOfMovies = () => {
         }
                 <button
                     type="button"
+                    onClick={()=>{
+                        let ran = Math.random(Math.random() * 10);
+                        console.log(ran)
+                        setcomponentRender(ran)
+                    }}
                     className="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
                         Recommend Movie
                 </button>
@@ -75,11 +82,11 @@ const ListOfMovies = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
             >
-                {componentRender=="list"
+                {componentRender == "list"
                 ?
                     <ListMoviesData data={RandomMovie}/>
                 :
-                    <ListMoviesData />
+                    <Test />
                 }
 
 
