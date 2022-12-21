@@ -2,7 +2,10 @@ import React ,{useState,useEffect} from 'react'
 import {OUT_URL} from './urls'
 
 
+
+
 const ListMoviesData = ({data}) => {
+    console.log("data")
     const [datafromfront, setdatafromfront] = useState([])
 
     useEffect(() => {

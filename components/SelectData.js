@@ -41,7 +41,7 @@ const SelectData = () => {
                 options={options}
             />
             :
-            <h1>Loading ...</h1>
+            <h1 className="text-white font-extrabold">Loading ...</h1>
           }
       <Toaster />
     </div>
