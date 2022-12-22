@@ -1,11 +1,11 @@
 import React ,{useState,useEffect} from 'react'
-import {OUT_URL} from './urls'
-
+import {OUT_URL,FRONT_END_SINGLE_MOVIE} from './urls'
+import { useRouter } from 'next/router'
 
 
 
 const ListMoviesData = ({data}) => {
-    console.log("data")
+    const router = useRouter()
     const [datafromfront, setdatafromfront] = useState([])
 
     useEffect(() => {
@@ -55,7 +55,13 @@ const ListMoviesData = ({data}) => {
                                         </div>
                                         <p className="text-gray-200">
                                             {item["overview"].slice(0,50)}
-                                            <button className="font-bold text-green-500 ml-1 hover:pointer hover:underline hover:text-red-500">see more</button>
+                                            <button
+                                                onClick={()=>{
+                                                    router.push(FRONT_END_SINGLE_MOVIE+item["id"])
+                                                }}
+                                                className="font-bold text-green-500 ml-1 hover:pointer hover:underline hover:text-red-500">
+                                                see more
+                                            </button>
                                         </p>
                                     </div>
                                     <div className="flex flex-wrap gap-1 ml-2">
